@@ -50,6 +50,12 @@ public class StaffAction {
         return map;
     }
 
+    /**
+     * 删除
+     * @param i
+     * @return
+     */
+    @Deprecated
     @DeleteMapping("{i}")
     public Map<String,Object> deleteStaff(@PathVariable Integer i){
         UpdateWrapper<Staff> update = Wrappers.update();
