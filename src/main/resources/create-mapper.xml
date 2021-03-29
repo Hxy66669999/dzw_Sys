@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+
+    <context id="oracleTables" targetRuntime="MyBatis3">
+        <commentGenerator>
+            <property name="suppressDate" value="true"/>
+            <property name="suppressAllComments" value="true"/>
+        </commentGenerator>
+        <!-- 数据库配置 -->
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                        connectionURL="jdbc:mysql://127.0.0.1:3306/dzw?characterEncoding=utf8"
+                        userId="root" password="748123">
+        </jdbcConnection>
+        <javaTypeResolver>
+            <property name="forceBigDecimals" value="false"/>
+        </javaTypeResolver>
+        <!-- 实体类的生成 -->
+        <javaModelGenerator targetPackage="org.java10.dzw.pojo" targetProject="src/main/java">
+            <property name="enableSubPackages" value="true"/>
+            <property name="trimStrings" value="true"/>
+        </javaModelGenerator>
+<!--        &lt;!&ndash; 映射配置文件生成 &ndash;&gt;
+        <sqlMapGenerator targetPackage="mapper" targetProject="src/main/resources">
+            <property name="enableSubPackages" value="true"/>
+        </sqlMapGenerator>
+        &lt;!&ndash; 映射接口的生成 &ndash;&gt;
+        <javaClientGenerator type="XMLMAPPER"
+                             targetPackage="com.mytry.dao" targetProject="src/main/java">
+            <property name="enableSubPackages" value="true"/>
+        </javaClientGenerator>-->
+
+
+        <!--
+        tableName是数据库中的表名或视图名
+        domainObjectName是实体类名
+        -->
+        <!--<table tableName="position" domainObjectName="Position" enableCountByExample="false" enableUpdateByExample="false"
+               enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"/>-->
+
+        <!--<table tableName="staff" domainObjectName="Staff" enableCountByExample="false" enableUpdateByExample="false"
+               enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"/>-->
+
+<!--        <table tableName="education" domainObjectName="Education" enableCountByExample="false" enableUpdateByExample="false"
+               enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"/>-->
+<!--        <table tableName="dimission" domainObjectName="Dimission" enableCountByExample="false" enableUpdateByExample="false"
+               enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"/>-->
+    </context>
+</generatorConfiguration>  
