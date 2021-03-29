@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="org.java10.dzw.dao.Hxy.VipconsumeinfoMapper" >
+  <resultMap id="BaseResultMap" type="org.java10.dzw.pojo.Vipconsumeinfo" >
+    <result column="vipci_id" property="vipciId" jdbcType="INTEGER" />
+    <result column="vipci_account" property="vipciAccount" jdbcType="VARCHAR" />
+    <result column="vipci_name" property="vipciName" jdbcType="VARCHAR" />
+    <result column="vipci_ordermun" property="vipciOrdermun" jdbcType="VARCHAR" />
+    <result column="vipci_ordermoeny" property="vipciOrdermoeny" jdbcType="REAL" />
+    <result column="vipci_xftype" property="vipciXftype" jdbcType="VARCHAR" />
+    <result column="vipci_upmoeny" property="vipciUpmoeny" jdbcType="REAL" />
+    <result column="vipci_fktype" property="vipciFktype" jdbcType="VARCHAR" />
+    <result column="vipci_reserve" property="vipciReserve" jdbcType="VARCHAR" />
+    <result column="vipci_reserve2" property="vipciReserve2" jdbcType="INTEGER" />
+    <result column="vipci_reserve3" property="vipciReserve3" jdbcType="VARCHAR" />
+    <result column="vipci_reserve4" property="vipciReserve4" jdbcType="VARCHAR" />
+    <result column="vipci_reserve5" property="vipciReserve5" jdbcType="VARCHAR" />
+    <result column="vipci_creator" property="vipciCreator" jdbcType="VARCHAR" />
+    <result column="vipci_date" property="vipciDate" jdbcType="TIMESTAMP" />
+    <result column="vipci_modifier" property="vipciModifier" jdbcType="VARCHAR" />
+    <result column="vipci_updatetime" property="vipciUpdatetime" jdbcType="TIMESTAMP" />
+    <result column="vipci_remove" property="vipciRemove" jdbcType="INTEGER" />
+  </resultMap>
+  <insert id="insert" parameterType="org.java10.dzw.pojo.Vipconsumeinfo" >
+    insert into vipconsumeinfo (vipci_id, vipci_account, vipci_name, 
+      vipci_ordermun, vipci_ordermoeny, vipci_xftype, 
+      vipci_upmoeny, vipci_fktype, vipci_reserve, 
+      vipci_reserve2, vipci_reserve3, vipci_reserve4, 
+      vipci_reserve5, vipci_creator, vipci_date, 
+      vipci_modifier, vipci_updatetime, vipci_remove
+      )
+    values (#{vipciId,jdbcType=INTEGER}, #{vipciAccount,jdbcType=VARCHAR}, #{vipciName,jdbcType=VARCHAR}, 
+      #{vipciOrdermun,jdbcType=VARCHAR}, #{vipciOrdermoeny,jdbcType=REAL}, #{vipciXftype,jdbcType=VARCHAR}, 
+      #{vipciUpmoeny,jdbcType=REAL}, #{vipciFktype,jdbcType=VARCHAR}, #{vipciReserve,jdbcType=VARCHAR}, 
+      #{vipciReserve2,jdbcType=INTEGER}, #{vipciReserve3,jdbcType=VARCHAR}, #{vipciReserve4,jdbcType=VARCHAR}, 
+      #{vipciReserve5,jdbcType=VARCHAR}, #{vipciCreator,jdbcType=VARCHAR}, #{vipciDate,jdbcType=TIMESTAMP}, 
+      #{vipciModifier,jdbcType=VARCHAR}, #{vipciUpdatetime,jdbcType=TIMESTAMP}, #{vipciRemove,jdbcType=INTEGER}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="org.java10.dzw.pojo.Vipconsumeinfo" >
+    insert into vipconsumeinfo
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="vipciId != null" >
+        vipci_id,
+      </if>
+      <if test="vipciAccount != null" >
+        vipci_account,
+      </if>
+      <if test="vipciName != null" >
+        vipci_name,
+      </if>
+      <if test="vipciOrdermun != null" >
+        vipci_ordermun,
+      </if>
+      <if test="vipciOrdermoeny != null" >
+        vipci_ordermoeny,
+      </if>
+      <if test="vipciXftype != null" >
+        vipci_xftype,
+      </if>
+      <if test="vipciUpmoeny != null" >
+        vipci_upmoeny,
+      </if>
+      <if test="vipciFktype != null" >
+        vipci_fktype,
+      </if>
+      <if test="vipciReserve != null" >
+        vipci_reserve,
+      </if>
+      <if test="vipciReserve2 != null" >
+        vipci_reserve2,
+      </if>
+      <if test="vipciReserve3 != null" >
+        vipci_reserve3,
+      </if>
+      <if test="vipciReserve4 != null" >
+        vipci_reserve4,
+      </if>
+      <if test="vipciReserve5 != null" >
+        vipci_reserve5,
+      </if>
+      <if test="vipciCreator != null" >
+        vipci_creator,
+      </if>
+      <if test="vipciDate != null" >
+        vipci_date,
+      </if>
+      <if test="vipciModifier != null" >
+        vipci_modifier,
+      </if>
+      <if test="vipciUpdatetime != null" >
+        vipci_updatetime,
+      </if>
+      <if test="vipciRemove != null" >
+        vipci_remove,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="vipciId != null" >
+        #{vipciId,jdbcType=INTEGER},
+      </if>
+      <if test="vipciAccount != null" >
+        #{vipciAccount,jdbcType=VARCHAR},
+      </if>
+      <if test="vipciName != null" >
+        #{vipciName,jdbcType=VARCHAR},
+      </if>
+      <if test="vipciOrdermun != null" >
+        #{vipciOrdermun,jdbcType=VARCHAR},
+      </if>
+      <if test="vipciOrdermoeny != null" >
+        #{vipciOrdermoeny,jdbcType=REAL},
+      </if>
+      <if test="vipciXftype != null" >
+        #{vipciXftype,jdbcType=VARCHAR},
+      </if>
+      <if test="vipciUpmoeny != null" >
+        #{vipciUpmoeny,jdbcType=REAL},
+      </if>
+      <if test="vipciFktype != null" >
+        #{vipciFktype,jdbcType=VARCHAR},
+      </if>
+      <if test="vipciReserve != null" >
+        #{vipciReserve,jdbcType=VARCHAR},
+      </if>
+      <if test="vipciReserve2 != null" >
+        #{vipciReserve2,jdbcType=INTEGER},
+      </if>
+      <if test="vipciReserve3 != null" >
+        #{vipciReserve3,jdbcType=VARCHAR},
+      </if>
+      <if test="vipciReserve4 != null" >
+        #{vipciReserve4,jdbcType=VARCHAR},
+      </if>
+      <if test="vipciReserve5 != null" >
+        #{vipciReserve5,jdbcType=VARCHAR},
+      </if>
+      <if test="vipciCreator != null" >
+        #{vipciCreator,jdbcType=VARCHAR},
+      </if>
+      <if test="vipciDate != null" >
+        #{vipciDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="vipciModifier != null" >
+        #{vipciModifier,jdbcType=VARCHAR},
+      </if>
+      <if test="vipciUpdatetime != null" >
+        #{vipciUpdatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="vipciRemove != null" >
+        #{vipciRemove,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+</mapper>

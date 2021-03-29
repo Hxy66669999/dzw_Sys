@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="org.java10.dzw.dao.Hxy.ModeltypeMapper" >
+  <resultMap id="BaseResultMap" type="org.java10.dzw.pojo.Modeltype" >
+    <id column="modeltype_id" property="modeltypeId" jdbcType="INTEGER" />
+    <result column="engine_id" property="engineId" jdbcType="INTEGER" />
+    <result column="vehicle_id" property="vehicleId" jdbcType="INTEGER" />
+    <result column="modeltype_name" property="modeltypeName" jdbcType="VARCHAR" />
+    <result column="modeltype_price" property="modeltypePrice" jdbcType="DOUBLE" />
+    <result column="modeltype_creator" property="modeltypeCreator" jdbcType="VARCHAR" />
+    <result column="modeltype_date" property="modeltypeDate" jdbcType="TIMESTAMP" />
+    <result column="modeltype_modifier" property="modeltypeModifier" jdbcType="VARCHAR" />
+    <result column="modeltype_updatetime" property="modeltypeUpdatetime" jdbcType="TIMESTAMP" />
+    <result column="modeltype_remove" property="modeltypeRemove" jdbcType="INTEGER" />
+    <result column="modeltype_null_1" property="modeltypeNull1" jdbcType="VARCHAR" />
+    <result column="modeltype_null_2" property="modeltypeNull2" jdbcType="VARCHAR" />
+    <result column="modeltype_null_3" property="modeltypeNull3" jdbcType="VARCHAR" />
+    <result column="modeltype_null_4" property="modeltypeNull4" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    modeltype_id, engine_id, vehicle_id, modeltype_name, modeltype_price, modeltype_creator, 
+    modeltype_date, modeltype_modifier, modeltype_updatetime, modeltype_remove, modeltype_null_1, 
+    modeltype_null_2, modeltype_null_3, modeltype_null_4
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from modeltype
+    where modeltype_id = #{modeltypeId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from modeltype
+    where modeltype_id = #{modeltypeId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="org.java10.dzw.pojo.Modeltype" >
+    insert into modeltype (modeltype_id, engine_id, vehicle_id, 
+      modeltype_name, modeltype_price, modeltype_creator, 
+      modeltype_date, modeltype_modifier, modeltype_updatetime, 
+      modeltype_remove, modeltype_null_1, modeltype_null_2, 
+      modeltype_null_3, modeltype_null_4)
+    values (#{modeltypeId,jdbcType=INTEGER}, #{engineId,jdbcType=INTEGER}, #{vehicleId,jdbcType=INTEGER}, 
+      #{modeltypeName,jdbcType=VARCHAR}, #{modeltypePrice,jdbcType=DOUBLE}, #{modeltypeCreator,jdbcType=VARCHAR}, 
+      #{modeltypeDate,jdbcType=TIMESTAMP}, #{modeltypeModifier,jdbcType=VARCHAR}, #{modeltypeUpdatetime,jdbcType=TIMESTAMP}, 
+      #{modeltypeRemove,jdbcType=INTEGER}, #{modeltypeNull1,jdbcType=VARCHAR}, #{modeltypeNull2,jdbcType=VARCHAR}, 
+      #{modeltypeNull3,jdbcType=VARCHAR}, #{modeltypeNull4,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="org.java10.dzw.pojo.Modeltype" >
+    insert into modeltype
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="modeltypeId != null" >
+        modeltype_id,
+      </if>
+      <if test="engineId != null" >
+        engine_id,
+      </if>
+      <if test="vehicleId != null" >
+        vehicle_id,
+      </if>
+      <if test="modeltypeName != null" >
+        modeltype_name,
+      </if>
+      <if test="modeltypePrice != null" >
+        modeltype_price,
+      </if>
+      <if test="modeltypeCreator != null" >
+        modeltype_creator,
+      </if>
+      <if test="modeltypeDate != null" >
+        modeltype_date,
+      </if>
+      <if test="modeltypeModifier != null" >
+        modeltype_modifier,
+      </if>
+      <if test="modeltypeUpdatetime != null" >
+        modeltype_updatetime,
+      </if>
+      <if test="modeltypeRemove != null" >
+        modeltype_remove,
+      </if>
+      <if test="modeltypeNull1 != null" >
+        modeltype_null_1,
+      </if>
+      <if test="modeltypeNull2 != null" >
+        modeltype_null_2,
+      </if>
+      <if test="modeltypeNull3 != null" >
+        modeltype_null_3,
+      </if>
+      <if test="modeltypeNull4 != null" >
+        modeltype_null_4,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="modeltypeId != null" >
+        #{modeltypeId,jdbcType=INTEGER},
+      </if>
+      <if test="engineId != null" >
+        #{engineId,jdbcType=INTEGER},
+      </if>
+      <if test="vehicleId != null" >
+        #{vehicleId,jdbcType=INTEGER},
+      </if>
+      <if test="modeltypeName != null" >
+        #{modeltypeName,jdbcType=VARCHAR},
+      </if>
+      <if test="modeltypePrice != null" >
+        #{modeltypePrice,jdbcType=DOUBLE},
+      </if>
+      <if test="modeltypeCreator != null" >
+        #{modeltypeCreator,jdbcType=VARCHAR},
+      </if>
+      <if test="modeltypeDate != null" >
+        #{modeltypeDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modeltypeModifier != null" >
+        #{modeltypeModifier,jdbcType=VARCHAR},
+      </if>
+      <if test="modeltypeUpdatetime != null" >
+        #{modeltypeUpdatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modeltypeRemove != null" >
+        #{modeltypeRemove,jdbcType=INTEGER},
+      </if>
+      <if test="modeltypeNull1 != null" >
+        #{modeltypeNull1,jdbcType=VARCHAR},
+      </if>
+      <if test="modeltypeNull2 != null" >
+        #{modeltypeNull2,jdbcType=VARCHAR},
+      </if>
+      <if test="modeltypeNull3 != null" >
+        #{modeltypeNull3,jdbcType=VARCHAR},
+      </if>
+      <if test="modeltypeNull4 != null" >
+        #{modeltypeNull4,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="org.java10.dzw.pojo.Modeltype" >
+    update modeltype
+    <set >
+      <if test="engineId != null" >
+        engine_id = #{engineId,jdbcType=INTEGER},
+      </if>
+      <if test="vehicleId != null" >
+        vehicle_id = #{vehicleId,jdbcType=INTEGER},
+      </if>
+      <if test="modeltypeName != null" >
+        modeltype_name = #{modeltypeName,jdbcType=VARCHAR},
+      </if>
+      <if test="modeltypePrice != null" >
+        modeltype_price = #{modeltypePrice,jdbcType=DOUBLE},
+      </if>
+      <if test="modeltypeCreator != null" >
+        modeltype_creator = #{modeltypeCreator,jdbcType=VARCHAR},
+      </if>
+      <if test="modeltypeDate != null" >
+        modeltype_date = #{modeltypeDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modeltypeModifier != null" >
+        modeltype_modifier = #{modeltypeModifier,jdbcType=VARCHAR},
+      </if>
+      <if test="modeltypeUpdatetime != null" >
+        modeltype_updatetime = #{modeltypeUpdatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modeltypeRemove != null" >
+        modeltype_remove = #{modeltypeRemove,jdbcType=INTEGER},
+      </if>
+      <if test="modeltypeNull1 != null" >
+        modeltype_null_1 = #{modeltypeNull1,jdbcType=VARCHAR},
+      </if>
+      <if test="modeltypeNull2 != null" >
+        modeltype_null_2 = #{modeltypeNull2,jdbcType=VARCHAR},
+      </if>
+      <if test="modeltypeNull3 != null" >
+        modeltype_null_3 = #{modeltypeNull3,jdbcType=VARCHAR},
+      </if>
+      <if test="modeltypeNull4 != null" >
+        modeltype_null_4 = #{modeltypeNull4,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where modeltype_id = #{modeltypeId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="org.java10.dzw.pojo.Modeltype" >
+    update modeltype
+    set engine_id = #{engineId,jdbcType=INTEGER},
+      vehicle_id = #{vehicleId,jdbcType=INTEGER},
+      modeltype_name = #{modeltypeName,jdbcType=VARCHAR},
+      modeltype_price = #{modeltypePrice,jdbcType=DOUBLE},
+      modeltype_creator = #{modeltypeCreator,jdbcType=VARCHAR},
+      modeltype_date = #{modeltypeDate,jdbcType=TIMESTAMP},
+      modeltype_modifier = #{modeltypeModifier,jdbcType=VARCHAR},
+      modeltype_updatetime = #{modeltypeUpdatetime,jdbcType=TIMESTAMP},
+      modeltype_remove = #{modeltypeRemove,jdbcType=INTEGER},
+      modeltype_null_1 = #{modeltypeNull1,jdbcType=VARCHAR},
+      modeltype_null_2 = #{modeltypeNull2,jdbcType=VARCHAR},
+      modeltype_null_3 = #{modeltypeNull3,jdbcType=VARCHAR},
+      modeltype_null_4 = #{modeltypeNull4,jdbcType=VARCHAR}
+    where modeltype_id = #{modeltypeId,jdbcType=INTEGER}
+  </update>
+</mapper>

@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="org.java10.dzw.dao.Hxy.VehicledatainfoMapper" >
+  <resultMap id="BaseResultMap" type="org.java10.dzw.pojo.Vehicledatainfo" >
+    <result column="vdf_id" property="vdfId" jdbcType="INTEGER" />
+    <result column="vdf_brand" property="vdfBrand" jdbcType="INTEGER" />
+    <result column="vdf_type" property="vdfType" jdbcType="INTEGER" />
+    <result column="vdf_place" property="vdfPlace" jdbcType="VARCHAR" />
+    <result column="vdf_color" property="vdfColor" jdbcType="VARCHAR" />
+    <result column="vdf_platenum" property="vdfPlatenum" jdbcType="VARCHAR" />
+    <result column="vdf_vin" property="vdfVin" jdbcType="VARCHAR" />
+    <result column="vdf_reserve" property="vdfReserve" jdbcType="VARCHAR" />
+    <result column="vdf_cdfnum" property="vdfCdfnum" jdbcType="VARCHAR" />
+    <result column="vdf_reserve2" property="vdfReserve2" jdbcType="INTEGER" />
+    <result column="vdf_reserve3" property="vdfReserve3" jdbcType="VARCHAR" />
+    <result column="vdf_reserve4" property="vdfReserve4" jdbcType="VARCHAR" />
+    <result column="vdf_reserve5" property="vdfReserve5" jdbcType="VARCHAR" />
+    <result column="vdf_creator" property="vdfCreator" jdbcType="VARCHAR" />
+    <result column="vdf_date" property="vdfDate" jdbcType="CHAR" />
+    <result column="vdf_modifier" property="vdfModifier" jdbcType="CHAR" />
+    <result column="vdf_updatetime" property="vdfUpdatetime" jdbcType="TIMESTAMP" />
+    <result column="vdf_remove" property="vdfRemove" jdbcType="INTEGER" />
+  </resultMap>
+  <insert id="insert" parameterType="org.java10.dzw.pojo.Vehicledatainfo" >
+    insert into vehicledatainfo (vdf_id, vdf_brand, vdf_type, 
+      vdf_place, vdf_color, vdf_platenum, 
+      vdf_vin, vdf_reserve, vdf_cdfnum, 
+      vdf_reserve2, vdf_reserve3, vdf_reserve4, 
+      vdf_reserve5, vdf_creator, vdf_date, 
+      vdf_modifier, vdf_updatetime, vdf_remove
+      )
+    values (#{vdfId,jdbcType=INTEGER}, #{vdfBrand,jdbcType=INTEGER}, #{vdfType,jdbcType=INTEGER}, 
+      #{vdfPlace,jdbcType=VARCHAR}, #{vdfColor,jdbcType=VARCHAR}, #{vdfPlatenum,jdbcType=VARCHAR}, 
+      #{vdfVin,jdbcType=VARCHAR}, #{vdfReserve,jdbcType=VARCHAR}, #{vdfCdfnum,jdbcType=VARCHAR}, 
+      #{vdfReserve2,jdbcType=INTEGER}, #{vdfReserve3,jdbcType=VARCHAR}, #{vdfReserve4,jdbcType=VARCHAR}, 
+      #{vdfReserve5,jdbcType=VARCHAR}, #{vdfCreator,jdbcType=VARCHAR}, #{vdfDate,jdbcType=CHAR}, 
+      #{vdfModifier,jdbcType=CHAR}, #{vdfUpdatetime,jdbcType=TIMESTAMP}, #{vdfRemove,jdbcType=INTEGER}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="org.java10.dzw.pojo.Vehicledatainfo" >
+    insert into vehicledatainfo
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="vdfId != null" >
+        vdf_id,
+      </if>
+      <if test="vdfBrand != null" >
+        vdf_brand,
+      </if>
+      <if test="vdfType != null" >
+        vdf_type,
+      </if>
+      <if test="vdfPlace != null" >
+        vdf_place,
+      </if>
+      <if test="vdfColor != null" >
+        vdf_color,
+      </if>
+      <if test="vdfPlatenum != null" >
+        vdf_platenum,
+      </if>
+      <if test="vdfVin != null" >
+        vdf_vin,
+      </if>
+      <if test="vdfReserve != null" >
+        vdf_reserve,
+      </if>
+      <if test="vdfCdfnum != null" >
+        vdf_cdfnum,
+      </if>
+      <if test="vdfReserve2 != null" >
+        vdf_reserve2,
+      </if>
+      <if test="vdfReserve3 != null" >
+        vdf_reserve3,
+      </if>
+      <if test="vdfReserve4 != null" >
+        vdf_reserve4,
+      </if>
+      <if test="vdfReserve5 != null" >
+        vdf_reserve5,
+      </if>
+      <if test="vdfCreator != null" >
+        vdf_creator,
+      </if>
+      <if test="vdfDate != null" >
+        vdf_date,
+      </if>
+      <if test="vdfModifier != null" >
+        vdf_modifier,
+      </if>
+      <if test="vdfUpdatetime != null" >
+        vdf_updatetime,
+      </if>
+      <if test="vdfRemove != null" >
+        vdf_remove,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="vdfId != null" >
+        #{vdfId,jdbcType=INTEGER},
+      </if>
+      <if test="vdfBrand != null" >
+        #{vdfBrand,jdbcType=INTEGER},
+      </if>
+      <if test="vdfType != null" >
+        #{vdfType,jdbcType=INTEGER},
+      </if>
+      <if test="vdfPlace != null" >
+        #{vdfPlace,jdbcType=VARCHAR},
+      </if>
+      <if test="vdfColor != null" >
+        #{vdfColor,jdbcType=VARCHAR},
+      </if>
+      <if test="vdfPlatenum != null" >
+        #{vdfPlatenum,jdbcType=VARCHAR},
+      </if>
+      <if test="vdfVin != null" >
+        #{vdfVin,jdbcType=VARCHAR},
+      </if>
+      <if test="vdfReserve != null" >
+        #{vdfReserve,jdbcType=VARCHAR},
+      </if>
+      <if test="vdfCdfnum != null" >
+        #{vdfCdfnum,jdbcType=VARCHAR},
+      </if>
+      <if test="vdfReserve2 != null" >
+        #{vdfReserve2,jdbcType=INTEGER},
+      </if>
+      <if test="vdfReserve3 != null" >
+        #{vdfReserve3,jdbcType=VARCHAR},
+      </if>
+      <if test="vdfReserve4 != null" >
+        #{vdfReserve4,jdbcType=VARCHAR},
+      </if>
+      <if test="vdfReserve5 != null" >
+        #{vdfReserve5,jdbcType=VARCHAR},
+      </if>
+      <if test="vdfCreator != null" >
+        #{vdfCreator,jdbcType=VARCHAR},
+      </if>
+      <if test="vdfDate != null" >
+        #{vdfDate,jdbcType=CHAR},
+      </if>
+      <if test="vdfModifier != null" >
+        #{vdfModifier,jdbcType=CHAR},
+      </if>
+      <if test="vdfUpdatetime != null" >
+        #{vdfUpdatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="vdfRemove != null" >
+        #{vdfRemove,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+</mapper>

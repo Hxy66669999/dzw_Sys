@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="org.java10.dzw.dao.Hxy.BrandMapper" >
+  <resultMap id="BaseResultMap" type="org.java10.dzw.pojo.Brand" >
+    <id column="brand_id" property="brandId" jdbcType="INTEGER" />
+    <result column="brand_name" property="brandName" jdbcType="VARCHAR" />
+    <result column="brand_creator" property="brandCreator" jdbcType="VARCHAR" />
+    <result column="brand_date" property="brandDate" jdbcType="TIMESTAMP" />
+    <result column="brand_modifier" property="brandModifier" jdbcType="VARCHAR" />
+    <result column="brand_updatetime" property="brandUpdatetime" jdbcType="TIMESTAMP" />
+    <result column="brand_remove" property="brandRemove" jdbcType="INTEGER" />
+    <result column="brand_null_1" property="brandNull1" jdbcType="VARCHAR" />
+    <result column="brand_null_2" property="brandNull2" jdbcType="VARCHAR" />
+    <result column="brand_null_3" property="brandNull3" jdbcType="VARCHAR" />
+    <result column="brand_null_4" property="brandNull4" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    brand_id, brand_name, brand_creator, brand_date, brand_modifier, brand_updatetime, 
+    brand_remove, brand_null_1, brand_null_2, brand_null_3, brand_null_4
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from brand
+    where brand_id = #{brandId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from brand
+    where brand_id = #{brandId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="org.java10.dzw.pojo.Brand" >
+    insert into brand (brand_id, brand_name, brand_creator, 
+      brand_date, brand_modifier, brand_updatetime, 
+      brand_remove, brand_null_1, brand_null_2, 
+      brand_null_3, brand_null_4)
+    values (#{brandId,jdbcType=INTEGER}, #{brandName,jdbcType=VARCHAR}, #{brandCreator,jdbcType=VARCHAR}, 
+      #{brandDate,jdbcType=TIMESTAMP}, #{brandModifier,jdbcType=VARCHAR}, #{brandUpdatetime,jdbcType=TIMESTAMP}, 
+      #{brandRemove,jdbcType=INTEGER}, #{brandNull1,jdbcType=VARCHAR}, #{brandNull2,jdbcType=VARCHAR}, 
+      #{brandNull3,jdbcType=VARCHAR}, #{brandNull4,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="org.java10.dzw.pojo.Brand" >
+    insert into brand
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="brandId != null" >
+        brand_id,
+      </if>
+      <if test="brandName != null" >
+        brand_name,
+      </if>
+      <if test="brandCreator != null" >
+        brand_creator,
+      </if>
+      <if test="brandDate != null" >
+        brand_date,
+      </if>
+      <if test="brandModifier != null" >
+        brand_modifier,
+      </if>
+      <if test="brandUpdatetime != null" >
+        brand_updatetime,
+      </if>
+      <if test="brandRemove != null" >
+        brand_remove,
+      </if>
+      <if test="brandNull1 != null" >
+        brand_null_1,
+      </if>
+      <if test="brandNull2 != null" >
+        brand_null_2,
+      </if>
+      <if test="brandNull3 != null" >
+        brand_null_3,
+      </if>
+      <if test="brandNull4 != null" >
+        brand_null_4,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="brandId != null" >
+        #{brandId,jdbcType=INTEGER},
+      </if>
+      <if test="brandName != null" >
+        #{brandName,jdbcType=VARCHAR},
+      </if>
+      <if test="brandCreator != null" >
+        #{brandCreator,jdbcType=VARCHAR},
+      </if>
+      <if test="brandDate != null" >
+        #{brandDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="brandModifier != null" >
+        #{brandModifier,jdbcType=VARCHAR},
+      </if>
+      <if test="brandUpdatetime != null" >
+        #{brandUpdatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="brandRemove != null" >
+        #{brandRemove,jdbcType=INTEGER},
+      </if>
+      <if test="brandNull1 != null" >
+        #{brandNull1,jdbcType=VARCHAR},
+      </if>
+      <if test="brandNull2 != null" >
+        #{brandNull2,jdbcType=VARCHAR},
+      </if>
+      <if test="brandNull3 != null" >
+        #{brandNull3,jdbcType=VARCHAR},
+      </if>
+      <if test="brandNull4 != null" >
+        #{brandNull4,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="org.java10.dzw.pojo.Brand" >
+    update brand
+    <set >
+      <if test="brandName != null" >
+        brand_name = #{brandName,jdbcType=VARCHAR},
+      </if>
+      <if test="brandCreator != null" >
+        brand_creator = #{brandCreator,jdbcType=VARCHAR},
+      </if>
+      <if test="brandDate != null" >
+        brand_date = #{brandDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="brandModifier != null" >
+        brand_modifier = #{brandModifier,jdbcType=VARCHAR},
+      </if>
+      <if test="brandUpdatetime != null" >
+        brand_updatetime = #{brandUpdatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="brandRemove != null" >
+        brand_remove = #{brandRemove,jdbcType=INTEGER},
+      </if>
+      <if test="brandNull1 != null" >
+        brand_null_1 = #{brandNull1,jdbcType=VARCHAR},
+      </if>
+      <if test="brandNull2 != null" >
+        brand_null_2 = #{brandNull2,jdbcType=VARCHAR},
+      </if>
+      <if test="brandNull3 != null" >
+        brand_null_3 = #{brandNull3,jdbcType=VARCHAR},
+      </if>
+      <if test="brandNull4 != null" >
+        brand_null_4 = #{brandNull4,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where brand_id = #{brandId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="org.java10.dzw.pojo.Brand" >
+    update brand
+    set brand_name = #{brandName,jdbcType=VARCHAR},
+      brand_creator = #{brandCreator,jdbcType=VARCHAR},
+      brand_date = #{brandDate,jdbcType=TIMESTAMP},
+      brand_modifier = #{brandModifier,jdbcType=VARCHAR},
+      brand_updatetime = #{brandUpdatetime,jdbcType=TIMESTAMP},
+      brand_remove = #{brandRemove,jdbcType=INTEGER},
+      brand_null_1 = #{brandNull1,jdbcType=VARCHAR},
+      brand_null_2 = #{brandNull2,jdbcType=VARCHAR},
+      brand_null_3 = #{brandNull3,jdbcType=VARCHAR},
+      brand_null_4 = #{brandNull4,jdbcType=VARCHAR}
+    where brand_id = #{brandId,jdbcType=INTEGER}
+  </update>
+</mapper>

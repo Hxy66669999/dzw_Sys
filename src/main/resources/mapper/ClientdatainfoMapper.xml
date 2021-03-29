@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="org.java10.dzw.dao.Hxy.ClientdatainfoMapper" >
+  <resultMap id="BaseResultMap" type="org.java10.dzw.pojo.Clientdatainfo" >
+    <id column="cdf_number" property="cdfNumber" jdbcType="VARCHAR" />
+    <result column="cdf_name" property="cdfName" jdbcType="VARCHAR" />
+    <result column="cdf_address" property="cdfAddress" jdbcType="VARCHAR" />
+    <result column="cdf_phone" property="cdfPhone" jdbcType="VARCHAR" />
+    <result column="cdf_sex" property="cdfSex" jdbcType="INTEGER" />
+    <result column="cdf_isvip" property="cdfIsvip" jdbcType="INTEGER" />
+    <result column="cdf_vipaccount" property="cdfVipaccount" jdbcType="VARCHAR" />
+    <result column="cdf_vippass" property="cdfVippass" jdbcType="VARCHAR" />
+    <result column="cdf_vipmoney" property="cdfVipmoney" jdbcType="REAL" />
+    <result column="cdf_vipfen" property="cdfVipfen" jdbcType="INTEGER" />
+    <result column="cdf_reserve" property="cdfReserve" jdbcType="VARCHAR" />
+    <result column="cdf_reserve2" property="cdfReserve2" jdbcType="INTEGER" />
+    <result column="cdf_reserve3" property="cdfReserve3" jdbcType="VARCHAR" />
+    <result column="cdf_reserve4" property="cdfReserve4" jdbcType="VARCHAR" />
+    <result column="cdf_reserve5" property="cdfReserve5" jdbcType="VARCHAR" />
+    <result column="cdf_creator" property="cdfCreator" jdbcType="VARCHAR" />
+    <result column="cdf_date" property="cdfDate" jdbcType="TIMESTAMP" />
+    <result column="cdf_modifier" property="cdfModifier" jdbcType="VARCHAR" />
+    <result column="cdf_updatetime" property="cdfUpdatetime" jdbcType="TIMESTAMP" />
+    <result column="cdf_remove" property="cdfRemove" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    cdf_number, cdf_name, cdf_address, cdf_phone, cdf_sex, cdf_isvip, cdf_vipaccount, 
+    cdf_vippass, cdf_vipmoney, cdf_vipfen, cdf_reserve, cdf_reserve2, cdf_reserve3, cdf_reserve4, 
+    cdf_reserve5, cdf_creator, cdf_date, cdf_modifier, cdf_updatetime, cdf_remove
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from clientdatainfo
+    where cdf_number = #{cdfNumber,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from clientdatainfo
+    where cdf_number = #{cdfNumber,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="org.java10.dzw.pojo.Clientdatainfo" >
+    insert into clientdatainfo (cdf_number, cdf_name, cdf_address, 
+      cdf_phone, cdf_sex, cdf_isvip, 
+      cdf_vipaccount, cdf_vippass, cdf_vipmoney, 
+      cdf_vipfen, cdf_reserve, cdf_reserve2, 
+      cdf_reserve3, cdf_reserve4, cdf_reserve5, 
+      cdf_creator, cdf_date, cdf_modifier, 
+      cdf_updatetime, cdf_remove)
+    values (#{cdfNumber,jdbcType=VARCHAR}, #{cdfName,jdbcType=VARCHAR}, #{cdfAddress,jdbcType=VARCHAR}, 
+      #{cdfPhone,jdbcType=VARCHAR}, #{cdfSex,jdbcType=INTEGER}, #{cdfIsvip,jdbcType=INTEGER}, 
+      #{cdfVipaccount,jdbcType=VARCHAR}, #{cdfVippass,jdbcType=VARCHAR}, #{cdfVipmoney,jdbcType=REAL}, 
+      #{cdfVipfen,jdbcType=INTEGER}, #{cdfReserve,jdbcType=VARCHAR}, #{cdfReserve2,jdbcType=INTEGER}, 
+      #{cdfReserve3,jdbcType=VARCHAR}, #{cdfReserve4,jdbcType=VARCHAR}, #{cdfReserve5,jdbcType=VARCHAR}, 
+      #{cdfCreator,jdbcType=VARCHAR}, #{cdfDate,jdbcType=TIMESTAMP}, #{cdfModifier,jdbcType=VARCHAR}, 
+      #{cdfUpdatetime,jdbcType=TIMESTAMP}, #{cdfRemove,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="org.java10.dzw.pojo.Clientdatainfo" >
+    insert into clientdatainfo
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="cdfNumber != null" >
+        cdf_number,
+      </if>
+      <if test="cdfName != null" >
+        cdf_name,
+      </if>
+      <if test="cdfAddress != null" >
+        cdf_address,
+      </if>
+      <if test="cdfPhone != null" >
+        cdf_phone,
+      </if>
+      <if test="cdfSex != null" >
+        cdf_sex,
+      </if>
+      <if test="cdfIsvip != null" >
+        cdf_isvip,
+      </if>
+      <if test="cdfVipaccount != null" >
+        cdf_vipaccount,
+      </if>
+      <if test="cdfVippass != null" >
+        cdf_vippass,
+      </if>
+      <if test="cdfVipmoney != null" >
+        cdf_vipmoney,
+      </if>
+      <if test="cdfVipfen != null" >
+        cdf_vipfen,
+      </if>
+      <if test="cdfReserve != null" >
+        cdf_reserve,
+      </if>
+      <if test="cdfReserve2 != null" >
+        cdf_reserve2,
+      </if>
+      <if test="cdfReserve3 != null" >
+        cdf_reserve3,
+      </if>
+      <if test="cdfReserve4 != null" >
+        cdf_reserve4,
+      </if>
+      <if test="cdfReserve5 != null" >
+        cdf_reserve5,
+      </if>
+      <if test="cdfCreator != null" >
+        cdf_creator,
+      </if>
+      <if test="cdfDate != null" >
+        cdf_date,
+      </if>
+      <if test="cdfModifier != null" >
+        cdf_modifier,
+      </if>
+      <if test="cdfUpdatetime != null" >
+        cdf_updatetime,
+      </if>
+      <if test="cdfRemove != null" >
+        cdf_remove,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="cdfNumber != null" >
+        #{cdfNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="cdfName != null" >
+        #{cdfName,jdbcType=VARCHAR},
+      </if>
+      <if test="cdfAddress != null" >
+        #{cdfAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="cdfPhone != null" >
+        #{cdfPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="cdfSex != null" >
+        #{cdfSex,jdbcType=INTEGER},
+      </if>
+      <if test="cdfIsvip != null" >
+        #{cdfIsvip,jdbcType=INTEGER},
+      </if>
+      <if test="cdfVipaccount != null" >
+        #{cdfVipaccount,jdbcType=VARCHAR},
+      </if>
+      <if test="cdfVippass != null" >
+        #{cdfVippass,jdbcType=VARCHAR},
+      </if>
+      <if test="cdfVipmoney != null" >
+        #{cdfVipmoney,jdbcType=REAL},
+      </if>
+      <if test="cdfVipfen != null" >
+        #{cdfVipfen,jdbcType=INTEGER},
+      </if>
+      <if test="cdfReserve != null" >
+        #{cdfReserve,jdbcType=VARCHAR},
+      </if>
+      <if test="cdfReserve2 != null" >
+        #{cdfReserve2,jdbcType=INTEGER},
+      </if>
+      <if test="cdfReserve3 != null" >
+        #{cdfReserve3,jdbcType=VARCHAR},
+      </if>
+      <if test="cdfReserve4 != null" >
+        #{cdfReserve4,jdbcType=VARCHAR},
+      </if>
+      <if test="cdfReserve5 != null" >
+        #{cdfReserve5,jdbcType=VARCHAR},
+      </if>
+      <if test="cdfCreator != null" >
+        #{cdfCreator,jdbcType=VARCHAR},
+      </if>
+      <if test="cdfDate != null" >
+        #{cdfDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="cdfModifier != null" >
+        #{cdfModifier,jdbcType=VARCHAR},
+      </if>
+      <if test="cdfUpdatetime != null" >
+        #{cdfUpdatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="cdfRemove != null" >
+        #{cdfRemove,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="org.java10.dzw.pojo.Clientdatainfo" >
+    update clientdatainfo
+    <set >
+      <if test="cdfName != null" >
+        cdf_name = #{cdfName,jdbcType=VARCHAR},
+      </if>
+      <if test="cdfAddress != null" >
+        cdf_address = #{cdfAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="cdfPhone != null" >
+        cdf_phone = #{cdfPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="cdfSex != null" >
+        cdf_sex = #{cdfSex,jdbcType=INTEGER},
+      </if>
+      <if test="cdfIsvip != null" >
+        cdf_isvip = #{cdfIsvip,jdbcType=INTEGER},
+      </if>
+      <if test="cdfVipaccount != null" >
+        cdf_vipaccount = #{cdfVipaccount,jdbcType=VARCHAR},
+      </if>
+      <if test="cdfVippass != null" >
+        cdf_vippass = #{cdfVippass,jdbcType=VARCHAR},
+      </if>
+      <if test="cdfVipmoney != null" >
+        cdf_vipmoney = #{cdfVipmoney,jdbcType=REAL},
+      </if>
+      <if test="cdfVipfen != null" >
+        cdf_vipfen = #{cdfVipfen,jdbcType=INTEGER},
+      </if>
+      <if test="cdfReserve != null" >
+        cdf_reserve = #{cdfReserve,jdbcType=VARCHAR},
+      </if>
+      <if test="cdfReserve2 != null" >
+        cdf_reserve2 = #{cdfReserve2,jdbcType=INTEGER},
+      </if>
+      <if test="cdfReserve3 != null" >
+        cdf_reserve3 = #{cdfReserve3,jdbcType=VARCHAR},
+      </if>
+      <if test="cdfReserve4 != null" >
+        cdf_reserve4 = #{cdfReserve4,jdbcType=VARCHAR},
+      </if>
+      <if test="cdfReserve5 != null" >
+        cdf_reserve5 = #{cdfReserve5,jdbcType=VARCHAR},
+      </if>
+      <if test="cdfCreator != null" >
+        cdf_creator = #{cdfCreator,jdbcType=VARCHAR},
+      </if>
+      <if test="cdfDate != null" >
+        cdf_date = #{cdfDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="cdfModifier != null" >
+        cdf_modifier = #{cdfModifier,jdbcType=VARCHAR},
+      </if>
+      <if test="cdfUpdatetime != null" >
+        cdf_updatetime = #{cdfUpdatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="cdfRemove != null" >
+        cdf_remove = #{cdfRemove,jdbcType=INTEGER},
+      </if>
+    </set>
+    where cdf_number = #{cdfNumber,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="org.java10.dzw.pojo.Clientdatainfo" >
+    update clientdatainfo
+    set cdf_name = #{cdfName,jdbcType=VARCHAR},
+      cdf_address = #{cdfAddress,jdbcType=VARCHAR},
+      cdf_phone = #{cdfPhone,jdbcType=VARCHAR},
+      cdf_sex = #{cdfSex,jdbcType=INTEGER},
+      cdf_isvip = #{cdfIsvip,jdbcType=INTEGER},
+      cdf_vipaccount = #{cdfVipaccount,jdbcType=VARCHAR},
+      cdf_vippass = #{cdfVippass,jdbcType=VARCHAR},
+      cdf_vipmoney = #{cdfVipmoney,jdbcType=REAL},
+      cdf_vipfen = #{cdfVipfen,jdbcType=INTEGER},
+      cdf_reserve = #{cdfReserve,jdbcType=VARCHAR},
+      cdf_reserve2 = #{cdfReserve2,jdbcType=INTEGER},
+      cdf_reserve3 = #{cdfReserve3,jdbcType=VARCHAR},
+      cdf_reserve4 = #{cdfReserve4,jdbcType=VARCHAR},
+      cdf_reserve5 = #{cdfReserve5,jdbcType=VARCHAR},
+      cdf_creator = #{cdfCreator,jdbcType=VARCHAR},
+      cdf_date = #{cdfDate,jdbcType=TIMESTAMP},
+      cdf_modifier = #{cdfModifier,jdbcType=VARCHAR},
+      cdf_updatetime = #{cdfUpdatetime,jdbcType=TIMESTAMP},
+      cdf_remove = #{cdfRemove,jdbcType=INTEGER}
+    where cdf_number = #{cdfNumber,jdbcType=VARCHAR}
+  </update>
+</mapper>
