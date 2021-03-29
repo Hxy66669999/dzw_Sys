@@ -3,7 +3,7 @@ package org.java10.dzw.action.lyw;
 
 import org.java10.dzw.biz.lyw.ShopBiz;
 import org.java10.dzw.pojo.APIResponse;
-import org.java10.dzw.pojo.shop;
+import org.java10.dzw.pojo.Shop;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -34,7 +34,7 @@ public class Shopaction {
         public  APIResponse chaxun2(@PathVariable Integer id){
             APIResponse apiResponse = new APIResponse();
             System.out.println("删除"+id);
-            List<shop> list  =ShopBiz.deleteomt2(id);
+            List<Shop> list  =ShopBiz.deleteomt2(id);
             apiResponse=new APIResponse(200,list,"成功");
 
             return apiResponse;
@@ -43,7 +43,7 @@ public class Shopaction {
 
     /*根据id来修改*/
     @PostMapping("/Goodschange")
-    public  APIResponse Goodschange(@RequestBody shop shop){
+    public  APIResponse Goodschange(@RequestBody Shop shop){
         APIResponse apiResponse = new APIResponse();
         shop.setShopcreator("lyw");
         shop.setShopdate(new Date());
@@ -58,7 +58,7 @@ public class Shopaction {
     }
     /*根据id来修改*/
     @PostMapping("/Thenewgoods")
-    public  APIResponse Thenewgoods(@RequestBody shop shop){
+    public  APIResponse Thenewgoods(@RequestBody Shop shop){
         APIResponse apiResponse = new APIResponse();
         shop.setShopcreator("lyw");
         shop.setShopdate(new Date());

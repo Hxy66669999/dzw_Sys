@@ -10,11 +10,11 @@ import lombok.NoArgsConstructor;
 
 import java.util.Date;
 
-@TableName("shop")
+@TableName("Shop")
 @Data
 @NoArgsConstructor //无参
 @AllArgsConstructor //全部参数
-public class shop {
+public class Shop {
     private static final long serialVersionUID = 1L;
         @TableId(type = IdType.AUTO,value="shop_id")
             private  Integer shopid;
@@ -59,16 +59,16 @@ public class shop {
     @TableField("shop_null_4")
             private  String shopnull_4;
 
-    public shop(Integer shopid, Integer stateid) {
+    public Shop(Integer shopid, Integer stateid) {
         this.shopid = shopid;
         this.stateid = stateid;
     }
 
-    public shop(Integer shopid) {
+    public Shop(Integer shopid) {
         this.shopid = shopid;
     }
 
-    public shop(Integer shopid, String firmnoid, Integer stateid, Integer goodsTypeid, Integer commodityid, String shopbrand, Double shopweight, Double shopprice, Double shopbjmoney, Double shophymoney, Double shopvipmoney, Double shoprxyprice, String shopcreator, Date shopdate, String shopmodifier, Date shopeupdatetime, Integer shopremove) {
+    public Shop(Integer shopid, String firmnoid, Integer stateid, Integer goodsTypeid, Integer commodityid, String shopbrand, Double shopweight, Double shopprice, Double shopbjmoney, Double shophymoney, Double shopvipmoney, Double shoprxyprice, String shopcreator, Date shopdate, String shopmodifier, Date shopeupdatetime, Integer shopremove) {
         this.shopid = shopid;
         this.firmnoid = firmnoid;
         this.stateid = stateid;

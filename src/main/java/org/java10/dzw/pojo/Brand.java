@@ -47,5 +47,17 @@ public class Brand {
     @TableField("brand_null_4")
     private String brandNull4;
 
+    public Brand(String brandName, String brandCreator, Date brandDate, String brandModifier, Date brandUpdatetime, Integer brandRemove) {
+        this.brandId = brandId;
+        this.brandName = brandName;
+        this.brandCreator = brandCreator;
+        this.brandDate = brandDate;
+        this.brandModifier = brandModifier;
+        this.brandUpdatetime = brandUpdatetime;
+        this.brandRemove = brandRemove;
+    }
 
+    public Brand(Integer brandRemove) {
+        this.brandRemove = brandRemove;
+    }
 }

@@ -1,5 +1,6 @@
 package org.java10.dzw.pojo;
 
+import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -7,6 +8,7 @@ import lombok.NoArgsConstructor;
 import java.io.Serializable;
 import java.util.Date;
 
+@TableName("staff")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor

@@ -1,11 +1,13 @@
 package org.java10.dzw.pojo;
 
+import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.util.Date;
 
+@TableName("dimission")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor

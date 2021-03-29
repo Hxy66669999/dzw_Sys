@@ -13,11 +13,11 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Date;
 
-@TableName("goodstype")
+@TableName("Goodstype")
 @Data
 @NoArgsConstructor //无参
 @AllArgsConstructor //全部参数
-public class goodstype {
+public class Goodstype {
 
     private static final long serialVersionUID = 1L;
             @TableId(type = IdType.AUTO,value="goodsType_id")
@@ -49,7 +49,7 @@ public class goodstype {
 
     @Override
     public String toString() {
-        return "goodstype{" +
+        return "Goodstype{" +
                 "goodsTypeid=" + goodsTypeid +
                 ", goodsTypename='" + goodsTypename + '\'' +
                 ", goodsTypecreator='" + goodsTypecreator + '\'' +
@@ -64,7 +64,7 @@ public class goodstype {
                 '}';
     }
 
-    public goodstype(String goodsTypename, String goodsTypecreator, Date goodsTypedate, String goodsTypemodifier, Date goodsTypeupdatetime, Integer goodsTyperemove) {
+    public Goodstype(String goodsTypename, String goodsTypecreator, Date goodsTypedate, String goodsTypemodifier, Date goodsTypeupdatetime, Integer goodsTyperemove) {
         this.goodsTypename = goodsTypename;
         this.goodsTypecreator = goodsTypecreator;
         this.goodsTypedate = goodsTypedate;
@@ -73,16 +73,16 @@ public class goodstype {
         this.goodsTyperemove = goodsTyperemove;
     }
 
-    public goodstype(Integer goodsTypeid) {
+    public Goodstype(Integer goodsTypeid) {
         this.goodsTypeid = goodsTypeid;
     }
 
-    public goodstype(Integer goodsTypeid, String goodsTypename) {
+    public Goodstype(Integer goodsTypeid, String goodsTypename) {
         this.goodsTypeid = goodsTypeid;
         this.goodsTypename = goodsTypename;
     }
 
-    public goodstype(Integer goodsTypeid, Integer goodsTyperemove) {
+    public Goodstype(Integer goodsTypeid, Integer goodsTyperemove) {
         this.goodsTypeid = goodsTypeid;
         this.goodsTyperemove = goodsTyperemove;
     }

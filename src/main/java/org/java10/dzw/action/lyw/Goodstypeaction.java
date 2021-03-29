@@ -2,7 +2,7 @@ package org.java10.dzw.action.lyw;
 
 import org.java10.dzw.biz.lyw.GoodstypeBiz;
 import org.java10.dzw.pojo.APIResponse;
-import org.java10.dzw.pojo.goodstype;
+import org.java10.dzw.pojo.Goodstype;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -20,7 +20,7 @@ public class Goodstypeaction {
 
         @GetMapping("/Inquirecommoditytype")
         public APIResponse  chaxun1(){
-                List<goodstype>  oo =  goodstypeBiz.chaxun();
+                List<Goodstype>  oo =  goodstypeBiz.chaxun();
                 APIResponse  apiResponse = new APIResponse();
                 apiResponse=new APIResponse(200,oo,"成功");
                 return  apiResponse;
@@ -50,7 +50,7 @@ public class Goodstypeaction {
         public APIResponse  Idlaiquery(@PathVariable Integer id){
                 System.out.println(id);
 
-                List<goodstype>  oo =  goodstypeBiz.Idlaiquery(id);
+                List<Goodstype>  oo =  goodstypeBiz.Idlaiquery(id);
                 APIResponse  apiResponse = new APIResponse();
                 apiResponse=new APIResponse(200,oo,"成功");
                 return  apiResponse;
@@ -60,7 +60,7 @@ public class Goodstypeaction {
         public APIResponse  search(@PathVariable String goodsTypename){
                 System.out.println(goodsTypename);
 
-                List<goodstype>  oo =  goodstypeBiz.search(goodsTypename);
+                List<Goodstype>  oo =  goodstypeBiz.search(goodsTypename);
                 APIResponse  apiResponse = new APIResponse();
                 apiResponse=new APIResponse(200,oo,"成功");
                 return  apiResponse;
@@ -79,7 +79,7 @@ public class Goodstypeaction {
         //商品修改里面的查询商品品牌
         @GetMapping("/Query")
         public APIResponse Query(){
-                List<goodstype>  oo =  goodstypeBiz.chaxun();
+                List<Goodstype>  oo =  goodstypeBiz.chaxun();
                 APIResponse  apiResponse = new APIResponse();
                 apiResponse=new APIResponse(200,oo,"成功");
                 return  apiResponse;

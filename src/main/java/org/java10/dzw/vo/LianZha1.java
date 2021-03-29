@@ -9,7 +9,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@TableName("goodstype")
+@TableName("Goodstype")
 @Data
 @NoArgsConstructor //无参
 @AllArgsConstructor //全部参数
