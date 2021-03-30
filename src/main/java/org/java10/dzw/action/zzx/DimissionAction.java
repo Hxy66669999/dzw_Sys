@@ -1,18 +1,20 @@
 package org.java10.dzw.action.zzx;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.core.toolkit.Wrappers;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import org.java10.dzw.biz.zzx.DimissionBiz;
+import org.java10.dzw.biz.zzx.PositionBiz;
 import org.java10.dzw.biz.zzx.StaffBiz;
 import org.java10.dzw.pojo.Dimission;
+import org.java10.dzw.pojo.Position;
 import org.java10.dzw.pojo.Staff;
+import org.java10.dzw.vo.DimissionObjVo;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
-import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 /**
  * @author: tryBin
@@ -26,6 +28,8 @@ public class DimissionAction {
     DimissionBiz dimissionBiz;
     @Autowired
     StaffBiz staffBiz;
+    @Autowired
+    PositionBiz positionBiz;
 
     @PostMapping
     public Map<String,Object> addDimission(@RequestBody Staff staff){
@@ -59,6 +63,26 @@ public class DimissionAction {
         HashMap<String, Object> map = new HashMap<String, Object>();
         map.put("code",200);
         map.put("data",dimissionBiz.save(dimission));
+        map.put("mgs","ok");
+        return map;
+    }
+
+    @GetMapping("{n}/{s}")
+    public Map<String,Object> GetDimissionAll(@PathVariable Integer n,@PathVariable Integer s){
+        PageHelper.startPage(n,s);
+        HashMap<String, Object> map = new HashMap<String, Object>();
+        QueryWrapper<Dimission> query = Wrappers.query();
+        List<Dimission> list = dimissionBiz.list(query);
+        PageInfo pageInfo = new PageInfo(list);
+        ArrayList<DimissionObjVo> objVoArrayList = new ArrayList();
+        list.forEach(emp->{
+            Position position = positionBiz.getById(emp.getStaffPositionCode());
+            objVoArrayList.add(new DimissionObjVo(emp,position.getPositionName()));
+        });
+        pageInfo.setList(objVoArrayList);
+        query.eq("dimission_deleted_marker", 0);
+        map.put("code",200);
+        map.put("data",pageInfo);
         map.put("mgs","ok");
         return map;
     }
